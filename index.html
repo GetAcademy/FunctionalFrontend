@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+
+    </div>
+    <button onclick="test('clickX')">Test</button>
+
+    <script>
+        let renderer = {};
+
+        doIt();
+        async function doIt() {
+            let result = await new Promise(saveFuncs)
+            console.log(result);
+        }
+
+        function test(e) {
+            renderer.resolve(e);
+        }
+
+        function saveFuncs(resolve, reject) {
+            renderer.resolve = resolve;
+            renderer.reject = reject;
+        }
+
+    </script>
+</body>
+
+</html>
